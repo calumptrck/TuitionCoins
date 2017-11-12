@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'TuitionCoins' });
+  res.render('index', { title: 'TuitionCoins', data: [], total: 0 });
 });
 
 router.post('/', function(req, res) {
@@ -20,7 +20,7 @@ router.post('/', function(req, res) {
       break;
     }
   };
-  termCost = {"Math":3306,CS:6810};
+  termCost = {"Math":3306,"CS":6810,"FARM":5062,"SE":7392,"AHS":3306,"Arts":3306,"AFM":3306,"GBDA":6131,"Architecture":4837,"Environment":3306,"BAMath":4521,"BACS":6810,"CPA":3306,"CFM":3306,"Science":3306};
   btcPrices = {
     0:4191.2175,
     1:775.25,
@@ -36,17 +36,25 @@ router.post('/', function(req, res) {
   }
   payments = [];
   counter = paidTerms.length-1;
+  totalbtc = 0;
   while (counter>=0) {
+    btcs = (termCost[data.program]/btcPrices[counter]).toFixed(2);
+    btcusds = btcPrices[counter].toFixed(2)
     payments.push({
-      key:  terms[counter],
-      value: termCost[data.program]/btcPrices[counter]
+      term:  terms[counter],
+      btcusd: btcusds,
+      termCost: termCost[data.program],
+      btc: btcs
+
     });
     counter-=1;
+    totalbtc+=parseFloat(btcs);
   }
   console.log(paidTerms);
   console.log(payments);
-  res.render('index', { title: 'TuitionCoinsXd',
-                        data: payments });
+  res.render('index', { title: 'TuitionCoins :)',
+                        data: payments,
+                        total: totalbtc.toFixed(2) });
 
 });
 

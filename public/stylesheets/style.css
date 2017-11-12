@@ -69,3 +69,32 @@ footer .source {
 .submit:active {
   background-color: #ECA24C;
 }
+
+.termOutline {
+  margin-top: 35px;
+  padding: 15px;
+  padding-top: 3px;
+  background-color: rgba(0,0,0,0.3);
+  border-radius: 0.75em;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+}
+
+h3 {
+  color: #ECA24C;
+}
+
+.total {
+  color: #ddd;
+}
+
+.profits {
+  color: #ddd;
+}
+
+.profit {
+  color: lightgreen;
+}
+
+.gold {
+  color: #ECA24C;
+}

@@ -17,7 +17,17 @@
       <option>CS</option>
       <option>FARM</option>
       <option>SE</option>
-      <option>ARB</option>
+      <option>AHS</option>
+      <option>Arts</option>
+      <option>AFM</option>
+      <option>GBDA</option>
+      <option>Architecture</option>
+      <option>Environment</option>
+      <option>BAMath</option>
+      <option>BACS</option>
+      <option>CPA</option>
+      <option>CFM</option>
+      <option>Science</option>
     </select>
   </div>
   <br>
@@ -40,5 +50,31 @@
   <br>
   <button type="submit" class="btn btn-secondary submit">Submit</button>
 </form>
+<br>
+<div class="row mt-5">
+  <% for(term in data) {%>
+    <div class="col col-sm-6">
+      <div class="termOutline">
+      <h3> Term: <%= data[term].term %> </h3>
+      <h4> Price of bitcoin: $<%= data[term].btcusd %> </h4>
+      <h4> You tuition cost: $<%= data[term].termCost %> </h4>
+      <h4> Tuition in BTC: <%= data[term].btc %> </h4>
+    </div>
+    </div>
+   <% } %>
+</div><br><br>
+
+  <h2 class="total">Total: <span class="gold btc"><%= total %>BTC</span> or <span class="gold usd">$0</span>.</h2>
+  <script>
+  $.ajax({
+  dataType: "json",
+  url: "https://api.coindesk.com/v1/bpi/currentprice/btc",
+  success: (data) => {
+    console.log(data);
+    $(".usd").text("$"+(data.bpi.USD.rate_float*<%= total %>).toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,'));
+  }
+  });
+  </script>
+
   </div>
 <% include footer.ejs %>
