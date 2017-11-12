@@ -1,7 +1,44 @@
 <% include header.ejs %>
   <div class="container">
     <h1><%= title %></h1>
-    <p>Here's how much money you would have if you invested your tuition in bitcoin.</p>
+    <h4>Here's how much money you would have if you invested your tuition in bitcoin.</h4>
+    <br><br>
+    <form method="POST" action="">
+  <div class="form-group name">
+    <label for="name">Name</label>
+    <input type="text" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Name">
+    <small id="name" class="form-text text-muted">We'll feature you on the leaderboard if it's a lot</small>
   </div>
-  </body>
-</html>
+  <br>
+  <div class="form-group program">
+    <label for="program">Program</label>
+    <select name="program" class="form-control" id="program">
+      <option>Math</option>
+      <option>CS</option>
+      <option>FARM</option>
+      <option>SE</option>
+      <option>ARB</option>
+    </select>
+  </div>
+  <br>
+  <div class="form-group term">
+    <label for="term">Term Currently Enrolled In</label>
+    <select name="term" class="form-control" id="term">
+      <option>1A</option>
+      <option>1B</option>
+      <option>2A</option>
+      <option>2B</option>
+      <option>3A</option>
+      <option>3B</option>
+      <option>4A</option>
+      <option>4B</option>
+      <option>5A</option>
+      <option>5B</option>
+      <option>5C</option>
+    </select>
+  </div>
+  <br>
+  <button type="submit" class="btn btn-secondary submit">Submit</button>
+</form>
+  </div>
+<% include footer.ejs %>

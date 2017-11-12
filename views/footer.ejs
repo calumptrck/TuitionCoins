@@ -1,0 +1,20 @@
+</body>
+<footer>
+  <script>
+  $.ajax({
+  dataType: "json",
+  url: "https://api.coindesk.com/v1/bpi/currentprice/btc",
+  success: (data) => {
+    console.log(data);
+    $(".price").text(data.bpi.USD.rate.substring(0,8));
+  }
+});
+</script>
+  <div class="container">
+    <hr>
+  <p>Results calculated using the max tuition cost for each term you've been enrolled in your program & the price of bitcoin at that time. Uses Fall/Winter term dates. Results are approximate.</p><br>
+  <p class="source"><a href="https://uwaterloo.ca/finance/student-financial-services/tuition-fee-schedules/fee-schedule-canadian-and-permanent-resident-undergraduates-5#cs"> Source</a>
+  <p class="ticker">btc is currently worth $<span class="price">5555</span></p>
+</div>
+</footer>
+</html>

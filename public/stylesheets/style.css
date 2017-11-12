@@ -8,8 +8,8 @@ body {
   background:
     /* top, transparent red, faked with gradient */
     linear-gradient(
-      rgba(0, 0, 0, 0.65),
-      rgba(0, 0, 0, 0.65)
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.6)
     ),
     /* bottom, image */
     url('../images/wall.jpg');
@@ -20,6 +20,52 @@ body {
     background-color: #111;
 }
 
+.container {
+  padding: 50px;
+}
+
 h1 {
   color: #fff;
+}
+
+h4 {
+  color: #bbb;
+  font-weight: 400;
+}
+
+form {
+  color: #bbb;
+  font-weight: 400;
+}
+
+label {
+  font-weight: 400;
+  font-size: 15px;
+}
+
+footer {
+  color: #999;
+}
+
+footer .ticker {
+  float: right;
+}
+
+footer .source {
+  float: left;
+}
+
+.submit {
+  color: #ECA24C;
+  background-color: rgba(0,0,0,0);
+  border-color: #ECA24C;
+  width: 100px;
+}
+
+.submit:hover {
+  background-color: #ECA24C;
+}
+
+.submit:active {
+  background-color: #ECA24C;
 }
