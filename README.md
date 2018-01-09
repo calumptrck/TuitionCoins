@@ -6,4 +6,4 @@ https://devpost.com/software/tuitioncoins
 ---
 For TerribleHack X
 
-![Preview](...)
+![Preview](https://github.com/calumptrck/TuitionCoins/blob/cfcd548d3bf7d547bdfbd2873d28de6be177c414/preview.png?raw=true)
