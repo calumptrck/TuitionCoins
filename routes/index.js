@@ -52,7 +52,7 @@ router.post('/', function(req, res) {
   }
   console.log(paidTerms);
   console.log(payments);
-  res.render('index', { title: 'TuitionCoins :)',
+  res.render('index', { title: 'TuitionCoins :))',
                         data: payments,
                         total: totalbtc.toFixed(2) });
 
